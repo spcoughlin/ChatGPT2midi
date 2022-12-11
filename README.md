@@ -13,6 +13,4 @@ Copy + paste your chord progression from ChatGPT into the input.txt file, making
 Run the file, and a timestamped .midi file will be placed in the same directory as everything else.
 
 # Supported Chords
-Right now, the program only supports Major, Minor, Diminished, maj7, -7, 7, sus2, sus4, and + chords. Even with these,
-I am not sure how ChatGPT writes the chord symbol, so they may not work. At the time of writing this, ChatGPT has been 
-at capacity for hours, so I will add more chords/correct them when I get the chance.
+Right now, the program supports major, minor, dim, maj7, m7, 7, sus2, sus4, aug, 6/9, 7sus, 7susadd3, add9, 7alt chords. More can be added. To add a chord, call the "build chord" function where all the others are called. The first parameter is the symbol of the chord as it appears on ChatGPT, and the rest are the numbers of semitones you go up to build the chord.
