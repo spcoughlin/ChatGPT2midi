@@ -2,7 +2,6 @@ import datetime
 from pymusicxml import *
 import music21
 import os
-from revChatGPT.revChatGPT import Chatbot
 
 with open("input.txt", "r") as f:
     lines = f.readlines()
