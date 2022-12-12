@@ -2,6 +2,7 @@ import datetime
 from pymusicxml import *
 import music21
 import os
+from revChatGPT.revChatGPT import Chatbot
 
 with open("input.txt", "r") as f:
     lines = f.readlines()
@@ -46,14 +47,21 @@ def build_chord(name: str, *args):
 
 
 build_chord("", 0, 4, 7)
-build_chord("-", 0, 3, 7)
+build_chord("m", 0, 3, 7)
 build_chord("dim", 0, 3, 6)
 build_chord("maj7", 0, 4, 7, 11)
-build_chord("-7", 0, 3, 7, 10)
+build_chord("m7", 0, 3, 7, 10)
 build_chord("7", 0, 4, 7, 10)
 build_chord("sus2", 0, 2, 7)
 build_chord("sus4", 0, 5, 7)
-build_chord("+", 0, 4, 8)
+build_chord("aug", 0, 4, 8)
+build_chord("6/9", 0, 4, 7, 9, 14)
+build_chord("7sus", 0, 5, 7, 10)
+build_chord("7sus2", 0, 2, 7, 10)
+build_chord("7sus4", 0, 5, 7, 10)
+build_chord("7susadd3", 0, 5, 7, 10, 16)
+build_chord("add9", 0, 4, 7, 14)
+build_chord("7alt", 0, 3, 6, 10)
 
 # working with pymusicxml
 
