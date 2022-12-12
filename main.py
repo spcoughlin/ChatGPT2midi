@@ -57,11 +57,8 @@ build_chord("sus4", 0, 5, 7)
 build_chord("aug", 0, 4, 8)
 build_chord("6/9", 0, 4, 7, 9, 14)
 build_chord("7sus", 0, 5, 7, 10)
-<<<<<<< HEAD
 build_chord("7sus2", 0, 2, 7, 10)
 build_chord("7sus4", 0, 5, 7, 10)
-=======
->>>>>>> 7b640f96fac16cd017000d675990d81b2291318f
 build_chord("7susadd3", 0, 5, 7, 10, 16)
 build_chord("add9", 0, 4, 7, 14)
 build_chord("7alt", 0, 3, 6, 10)
