@@ -63,6 +63,7 @@ build_chord("add9", 0, 4, 7, 14)
 build_chord("7alt", 0, 3, 6, 10)
 build_chord("13", 0, 4, 7, 11, 14, 17, 21)
 build_chord("9sus", 0, 5, 8)
+build_chord("sus", 0, 5, 7)
 
 # working with pymusicxml
 
