@@ -1,18 +1,27 @@
-# ChatGPT2midi  
-A Python script that converts a ChatGPT-generated chord progression into a .midi file
 
-# Installation
-To install the required dependencies, simply run:
+# ChatGPT2midi 🎶    
+A Python program that generates chord progressions with ChatGPT using [acheong08's ChatGPT API](https://github.com/acheong08/ChatGPT)
 
-    $ pip install -r requirements.txt  
+Tell ChatGPT what kind of chord progression you want, and you will have a midi file in seconds. I find it fun to just mess around, getting it to generate some pretty wacky chord progressions, and trying to play over them.
 
-in your preferred environment.
+  
+# Installation  
+Run the following commands:
 
-# Usage
-Copy + paste your chord progression from ChatGPT into the input.txt file, making sure it is the only thing in the file.
+`git clone https://github.com/spcoughlin/ChatGPT2midi.git`
 
-![spicychords](https://user-images.githubusercontent.com/99555305/206938153-0839d3cf-73a4-44b3-a4fc-fc66cfb95140.png)
+`cd ChatGPT2midi`
 
-This is what the input format should look like, and the highlighted text shows what you should put into input.txt. If you get a different format, you can add on "in 4 lines with 4 chords per lines, and dashes separate the chords" to your query to force this format.
+`pip install -r requirements.txt`
 
-Run the file, and a timestamped .midi file will be placed in the same directory as everything else.
+Follow the steps in [https://github.com/acheong08/ChatGPT/wiki/Setup](https://github.com/acheong08/ChatGPT/wiki/Setup) to replace "`YOUR-TOKEN`" with your token where the chatbot is initialized, near the top of `main.py`, or you can use another login method entirely if needed.
+
+  
+# Usage  
+To run the program, just run `main.py`.
+
+Once the browser window appears, the program will ask for what progression you want to make. I have added all the formatting stuff already, so you really just have to tell it what you want. Good examples include:
+
+ - "Write a chord progression in Bb Blues"
+ - "Write a chord progression that I can play an Ebm7 scale over"
+ - "Write a chord progression in F using some 6/9 chords"

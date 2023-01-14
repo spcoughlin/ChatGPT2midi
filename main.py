@@ -1,6 +1,12 @@
 from pychord import Chord
 import pretty_midi
 import time
+from revChatGPT.ChatGPT import Chatbot
+
+global chatbot
+chatbot = Chatbot({
+    "session_token": "YOUR-TOKEN" # place your token here
+}, conversation_id=None, parent_id=None)
 
 
 def create_midi(chords):
@@ -11,7 +17,6 @@ def create_midi(chords):
     piano_program = pretty_midi.instrument_name_to_program('Acoustic Grand Piano')
     piano = pretty_midi.Instrument(program=piano_program)
     length = 1
-    file_path = ""  # Enter your desired path here, no slash at end
     for n, chord in enumerate(chords):
         for note_name in chord.components_with_pitch(root_pitch=4):
             note_number = pretty_midi.note_name_to_number(note_name)
@@ -19,12 +24,19 @@ def create_midi(chords):
             piano.notes.append(note)
     midi_data.instruments.append(piano)
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    midi_data.write(f'{file_path}/progression-{timestr}.mid')
+    midi_data.write(f'progression-{timestr}.mid')
 
 
 def main():
-    with open("input.txt", "r") as f:
-        lines = f.readlines()
+    user_input = input("Enter what kind of chord progression you would like to generate: ")
+
+    response = chatbot.ask(f"{user_input} in the format of this chord progression: Bb7 - Bb7 - Bb7 - Bb7\nEb7 - Eb7 - "
+                           f"Bb7 - Bb7\nAb7 - Ab7 - Bb7 - Bb7\nEb7 - Bb7 - Ab7 - Eb7\nDo not write anything other than the chord progression itself.",
+                           conversation_id=None,
+                           parent_id=None)
+
+    print(response["message"])
+    lines = response["message"].split("\n")
 
     letters = ["A", "B", "C", "D", "E", "F", "G"]
 
@@ -47,7 +59,11 @@ def main():
     create_midi(chords)
 
     print("File created!")
-    input("Press enter to close the program")
+    end_input = input("Would you like to generate another midi file? (Y/N) ")
+    if end_input == "Y" or end_input == "y":
+        main()
+    else:
+        input("Press enter to close the program")
 
 
 if __name__ == '__main__':
